@@ -1,8 +1,8 @@
 <!--
-	//doniCancas ver1.1
+	//doniCancas ver1.2
 	//Copyright (C) 2016 Dancing on Image All Rights Reserved
 
-	//描画領域の範囲です。横幅(x)は-areax≦x≦areaX、縦幅(y)は-areay≦y≦areayとなります。
+	//描画領域の範囲です。横幅(x)は-areax≦x≦areax、縦幅(y)は-areay≦y≦areayとなります。
 	//Y軸の値は正負の方向が一般的な数学と逆転していることに注意してください。
 	var areax = 10;
 	var areay = 5;
@@ -77,16 +77,37 @@
 	
 	//指定された座標に点を打点します。
 	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
-	function drowP(x, y) {
+	function drowPoint(x, y) {
 		context.arc(x0 + x * mesh, y0 + (-1) * y * mesh, 1, 0, Math.PI * 2, true);
 	}
 	
+	//X軸から指定された座標まで線を描画します。
+	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
+	function drowLine(x, y) {
+		context.lineWidth = 2;
+		context.moveTo(x0 + x * mesh, y0);
+		context.lineTo(x0 + x * mesh, y0 + (-1) * y * mesh);
+	}
+	
 	//引数で指定された色でy=func(x)のグラフを描画します。打点の間隔は変数difです。
+	//描画範囲はグラフ領域の左端から右端まで（-areax≦x≦areax）になります。
 	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
 	function drowGraph(color) {
+		drowGraphRange(color, (-1) * areax, areax, 0);
+	}
+	
+	//引数で指定された色と描画範囲でy=func(x)のグラフを描画します。打点の間隔は変数difです。
+	//引数の最後に0を指定すると「点」を、それ以外の場合は「線」を描画します。
+	//最終的にグラフを塗りつぶす場合は0以外の値を指定してください。
+	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
+	function drowGraphRange(color, min, max, area) {
 		context.strokeStyle = color;
-		for (var x = (-1) * areax; x <= areax; x += dif) {
-			drowP(x, func(x));
+		for (var x = min; x <= max; x += dif) {
+			if (area == 0) {
+				drowPoint(x, func(x));
+			} else {
+				drowLine(x, func(x));
+			}
 		}
 		context.stroke();
 		context.beginPath();
