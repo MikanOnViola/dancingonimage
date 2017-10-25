@@ -1,14 +1,14 @@
 <!--
-	//doniCancas ver1.2
-	//Copyright (C) 2016 Dancing on Image All Rights Reserved
+	//acCancas ver1.3
+	//(C) 2017 Mikan(Andante Cantabile) All Rights Reserved
 
 	//描画領域の範囲です。横幅(x)は-areax≦x≦areax、縦幅(y)は-areay≦y≦areayとなります。
 	//Y軸の値は正負の方向が一般的な数学と逆転していることに注意してください。
-	var areax = 10;
-	var areay = 5;
+	var areax = 5;
+	var areay = 2;
 
-	//1をmesh(pixel)として描画します。例えば、meshが30の場合、5は150pixel、10は300pixelになります。
-	var mesh = 30;
+	//1をmesh(pixel)として描画します。例えば、meshが40の場合、5は200pixel、10は400pixelになります。
+	var mesh = 40;
 
 	//原点(x0, y0)の位置(pixel)です。
 	var x0 = areax * mesh;
@@ -97,7 +97,7 @@
 	}
 	
 	//引数で指定された色と描画範囲でy=func(x)のグラフを描画します。打点の間隔は変数difです。
-	//引数の最後に0を指定すると「点」を、それ以外の場合は「線」を描画します。
+	//最後の引数に0を指定すると「点」を、それ以外の場合は「線」を描画します。
 	//最終的にグラフを塗りつぶす場合は0以外の値を指定してください。
 	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
 	function drowGraphRange(color, min, max, area) {
