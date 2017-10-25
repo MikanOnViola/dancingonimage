@@ -1,5 +1,5 @@
 <!--
-	//acCancas ver1.3
+	//acCancas ver1.4
 	//(C) 2017 Mikan(Andante Cantabile) All Rights Reserved
 
 	//描画領域の範囲です。横幅(x)は-areax≦x≦areax、縦幅(y)は-areay≦y≦areayとなります。
@@ -15,7 +15,7 @@
 	var y0 = areay * mesh;
 
 	//グラフ描画時に打点する間隔です。
-	var dif = 0.1;
+	var dif = 0.05;
 
 	//Canvasの描画用コンテキストです。
 	var context = null;
@@ -78,12 +78,18 @@
 	//指定された座標に点を打点します。
 	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
 	function drowPoint(x, y) {
+		if ((y > areay) || (y < (-1) * areay)) {
+			return;
+		}
 		context.arc(x0 + x * mesh, y0 + (-1) * y * mesh, 1, 0, Math.PI * 2, true);
 	}
-	
+
 	//X軸から指定された座標まで線を描画します。
 	//この関数を呼出す前にgraphArea()を呼出してグラフ領域を設定してください。
 	function drowLine(x, y) {
+		if ((y > areay) || (y < (-1) * areay)) {
+			return;
+		}
 		context.lineWidth = 2;
 		context.moveTo(x0 + x * mesh, y0);
 		context.lineTo(x0 + x * mesh, y0 + (-1) * y * mesh);
