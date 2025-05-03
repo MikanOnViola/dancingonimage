@@ -1,0 +1,120 @@
+/* AC スタイルシート */
+
+body{
+font-size: 12px;
+font-family: MS UI Gothic;
+}
+
+/* Index */
+div.imgdiv{width:130px; height:22px;}
+.cwrap{padding-left:1em;}
+.indent{padding-left:1em;}
+.msub{width:200px; height:1000px; float:left;}
+.inh{height:15px; padding:1px; margin:1px;}
+.bstl{width:900px;}
+
+input.inh{height:10px; padding:1px; margin:1px; font-size:12px;}
+.inhd{height:10px; padding:1px; margin:1px; font-size:12px;}
+.inb{width:30px; height:20px; padding:1px; margin:1px; font-size:12px;}
+
+textarea.inh3{height:49px; padding:1px; margin:1px; font-size:12px;}
+
+p.imgp{width:40px; height:30px; overflow:hidden; margin-top: -8px;}
+h1.ind1{font-size: 200%; color:#FF5500; text-decoration:underline;}
+.ind2{
+font-size: 120%;
+color:#3333FF;
+}
+.ind3{
+font-size: 100%;
+color:#3333FF;
+}
+.twitterg{
+width:300px;
+height:300px;
+float:right;
+}
+
+audio.audiow{width:150px;}
+					
+/* Title and Words */
+.t3{font-size:200%; color:#0077FF;}
+.t4{font-size:120%; color:#0077FF;}
+.t5{font-size:120%; color:#0077FF;}
+.t6{font-size:200%; color:#3333FF;}
+.t7{font-size:120%; color:#3333FF;}
+.t8{font-size:120%; color:#003399;}
+.t9{font-size:200%; color:#9933CC;}
+.t10{font-size:120%; color:#9933CC;}
+.t11{font-size:120%; color:#DD00DD;}
+.t12{font-size:200%; color:#993300;}
+.t13{font-size:120%; color:#993300;}
+.t14{font-size:120%; color:#996600;}
+.t15{font-size:120%; color:#996600;}
+.t16{font-size:120%; color:#FF3300;}
+.t17{font-size:120%; color:#FF3300;}
+.t18{font-size:120%;}
+.t19{font-size:120%; color:#996633;}
+.t20{font-size:120%; color:#666666;}
+.t21{font-size:200%; color:#000000;}
+.t22{font-size:120%; color:#000000;}
+.t23{font-size:200%; color:#886622;}
+.t24{font-size:120%; color:#886622;}
+
+.comment{
+font-size : 0.8em;
+}
+
+.vtop{
+vertical-align:top;
+}
+
+/*--------------------
+ 吹き出し
+--------------------*/
+.balloon1-left {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 0 1.5em 15px;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+	border-radius: 10px;
+}
+
+.balloon1-left:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -30px;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #e0edff;
+}
+
+.balloon1-right {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 15px 1.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+	border-radius: 10px;
+}
+
+.balloon1-right:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 100%;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-left: 15px solid #e0edff;
+}
+
